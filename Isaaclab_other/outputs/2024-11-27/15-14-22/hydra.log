@@ -1,0 +1,68 @@
+[2024-11-27 15:14:22,595][ogn_registration][INFO] - Looking for Python nodes to register in omni.physx.fabric-106.1.9
+[2024-11-27 15:14:22,596][ogn_registration][INFO] -  -> Registered nodes from module omni.physxfabric at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extsPhysics/omni.physx.fabric
+[2024-11-27 15:14:22,596][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extsPhysics/omni.physx.fabric imported as omni.physxfabric with AutoNode config {}
+[2024-11-27 15:14:22,596][ogn_registration][INFO] - Registering Python Node Types from omni.physxfabric at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extsPhysics/omni.physx.fabric in omni.physx.fabric
+[2024-11-27 15:14:22,596][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:22,596][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.physx.fabric
+[2024-11-27 15:14:22,596][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:22,596][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.physxfabric - No nodes in this module, do not remember it
+[2024-11-27 15:14:22,597][ogn_registration][INFO] - Destroying registration record for omni.physx.fabric
+[2024-11-27 15:14:22,597][ogn_registration][INFO] - OGN register omni.physx.fabric-106.1.9 took 999229.000000
+[2024-11-27 15:14:23,156][ogn_registration][INFO] - Looking for Python nodes to register in omni.importer.urdf-1.14.1
+[2024-11-27 15:14:23,156][ogn_registration][INFO] -  -> Registered nodes from module omni.importer.urdf at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310
+[2024-11-27 15:14:23,156][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 imported as omni.importer.urdf with AutoNode config {}
+[2024-11-27 15:14:23,156][ogn_registration][INFO] - Registering Python Node Types from omni.importer.urdf at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 in omni.importer.urdf
+[2024-11-27 15:14:23,156][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:23,157][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.importer.urdf
+[2024-11-27 15:14:23,157][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:23,157][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.importer.urdf - No nodes in this module, do not remember it
+[2024-11-27 15:14:23,157][ogn_registration][INFO] - Destroying registration record for omni.importer.urdf
+[2024-11-27 15:14:23,157][ogn_registration][INFO] -  -> Registered nodes from module omni.importer.urdf.tests at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310
+[2024-11-27 15:14:23,157][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 imported as omni.importer.urdf.tests with AutoNode config {}
+[2024-11-27 15:14:23,157][ogn_registration][INFO] - Registering Python Node Types from omni.importer.urdf.tests at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 in omni.importer.urdf
+[2024-11-27 15:14:23,157][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:23,158][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.importer.urdf
+[2024-11-27 15:14:23,158][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:23,158][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.importer.urdf.tests - No nodes in this module, do not remember it
+[2024-11-27 15:14:23,158][ogn_registration][INFO] - Destroying registration record for omni.importer.urdf
+[2024-11-27 15:14:23,158][ogn_registration][INFO] -  -> Registered nodes from module omni.importer.urdf.scripts.ui at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310
+[2024-11-27 15:14:23,158][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 imported as omni.importer.urdf.scripts.ui with AutoNode config {}
+[2024-11-27 15:14:23,158][ogn_registration][INFO] - Registering Python Node Types from omni.importer.urdf.scripts.ui at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 in omni.importer.urdf
+[2024-11-27 15:14:23,158][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:23,159][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.importer.urdf
+[2024-11-27 15:14:23,159][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:23,159][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.importer.urdf.scripts.ui - No nodes in this module, do not remember it
+[2024-11-27 15:14:23,159][ogn_registration][INFO] - Destroying registration record for omni.importer.urdf
+[2024-11-27 15:14:23,159][ogn_registration][INFO] -  -> Registered nodes from module omni.importer.urdf.scripts.samples.import_carter at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310
+[2024-11-27 15:14:23,159][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 imported as omni.importer.urdf.scripts.samples.import_carter with AutoNode config {}
+[2024-11-27 15:14:23,159][ogn_registration][INFO] - Registering Python Node Types from omni.importer.urdf.scripts.samples.import_carter at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 in omni.importer.urdf
+[2024-11-27 15:14:23,159][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:23,160][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.importer.urdf
+[2024-11-27 15:14:23,160][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:23,160][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.importer.urdf.scripts.samples.import_carter - No nodes in this module, do not remember it
+[2024-11-27 15:14:23,160][ogn_registration][INFO] - Destroying registration record for omni.importer.urdf
+[2024-11-27 15:14:23,160][ogn_registration][INFO] -  -> Registered nodes from module omni.importer.urdf.scripts.samples.import_franka at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310
+[2024-11-27 15:14:23,160][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 imported as omni.importer.urdf.scripts.samples.import_franka with AutoNode config {}
+[2024-11-27 15:14:23,160][ogn_registration][INFO] - Registering Python Node Types from omni.importer.urdf.scripts.samples.import_franka at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 in omni.importer.urdf
+[2024-11-27 15:14:23,160][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:23,161][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.importer.urdf
+[2024-11-27 15:14:23,161][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:23,161][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.importer.urdf.scripts.samples.import_franka - No nodes in this module, do not remember it
+[2024-11-27 15:14:23,161][ogn_registration][INFO] - Destroying registration record for omni.importer.urdf
+[2024-11-27 15:14:23,161][ogn_registration][INFO] -  -> Registered nodes from module omni.importer.urdf.scripts.samples.import_kaya at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310
+[2024-11-27 15:14:23,161][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 imported as omni.importer.urdf.scripts.samples.import_kaya with AutoNode config {}
+[2024-11-27 15:14:23,161][ogn_registration][INFO] - Registering Python Node Types from omni.importer.urdf.scripts.samples.import_kaya at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 in omni.importer.urdf
+[2024-11-27 15:14:23,161][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:23,162][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.importer.urdf
+[2024-11-27 15:14:23,162][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:23,162][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.importer.urdf.scripts.samples.import_kaya - No nodes in this module, do not remember it
+[2024-11-27 15:14:23,162][ogn_registration][INFO] - Destroying registration record for omni.importer.urdf
+[2024-11-27 15:14:23,162][ogn_registration][INFO] -  -> Registered nodes from module omni.importer.urdf.scripts.samples.import_ur10 at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310
+[2024-11-27 15:14:23,162][ogn_registration][INFO] - Registering nodes in /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 imported as omni.importer.urdf.scripts.samples.import_ur10 with AutoNode config {}
+[2024-11-27 15:14:23,162][ogn_registration][INFO] - Registering Python Node Types from omni.importer.urdf.scripts.samples.import_ur10 at /home/p/.local/share/ov/pkg/isaac-sim-4.2.0/extscache/omni.importer.urdf-1.14.1+106.0.0.lx64.r.cp310 in omni.importer.urdf
+[2024-11-27 15:14:23,162][ogn_registration][INFO] - ========================================================================================================================
+[2024-11-27 15:14:23,163][ogn_registration][INFO] - No dependency on omni.graph, therefore no nodes to register in omni.importer.urdf
+[2024-11-27 15:14:23,163][ogn_registration][INFO] - ...None found, no registration to do
+[2024-11-27 15:14:23,163][ogn_registration][INFO] - ...Skipping: No OmniGraph presence in the module omni.importer.urdf.scripts.samples.import_ur10 - No nodes in this module, do not remember it
+[2024-11-27 15:14:23,163][ogn_registration][INFO] - Destroying registration record for omni.importer.urdf
+[2024-11-27 15:14:23,163][ogn_registration][INFO] - OGN register omni.importer.urdf-1.14.1 took 7323459.000000

@@ -1,0 +1,9 @@
+{('change_link_length', 'link_2_3'): {'improvements': 0,
+                                      'score_delta': 0.0,
+                                      'trials': 1},
+ ('change_link_radius', 'link_2_0'): {'improvements': 0,
+                                      'score_delta': 0.0,
+                                      'trials': 1},
+ ('remove_link', 'link_4_3'): {'improvements': 0,
+                               'score_delta': 0.0,
+                               'trials': 1}}
