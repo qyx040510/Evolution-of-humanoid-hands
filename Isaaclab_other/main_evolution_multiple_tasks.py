@@ -7,7 +7,7 @@ from evaluation_interface import evaluation
 # 定义基本信息，不考虑更底层的性别因素
 max_generation = 40 # 最大变异代数
 max_population = 10 # 环境最大承载量，超过此量就要末位淘汰
-max_variation = 3 # 每个个体下一代的最大变异数量，也是每个个体最多能出生的后代数，因为事实上每个个体都在变异
+max_variation = 2 # 每个个体下一代的最大变异数量，也是每个个体最多能出生的后代数，因为事实上每个个体都在变异
 next_task_reward=5000#进入下一任务的reward
 stable_success_generations = 2  # 连续几代成功才切任务
 max_generation_per_task=10
@@ -18,7 +18,7 @@ variation_probabilities = {  # 各项变异的发生概率
     "add_link": 0,
     "change_joint_origin_translation": 0,
     "change_joint_origin_rpy": 0, }
-experiment_save_path = "exp_20250505_1" # 保存谱系图的路径
+experiment_save_path = "exp_20250507_2" # 保存谱系图的路径
 
 evaluation_taks=["Isaac-EvolutionHand-Grasp-v0",
                  "Isaac-EvolutionHand-Manipulation-v0",
@@ -105,19 +105,26 @@ for current_generation in range(0, max_generation+1): #max_generation+1
         # print(current_generation,current_individual)
         current_urdf = hand_lineage.lineage[(current_generation,current_individual)]['urdf_info']
         original_score = hand_lineage.lineage[(current_generation, current_individual)]['task_score']
-
+        # success_num=0
         # print("current urdf:",current_urdf)
         for trail in range(max_variation):#
-            # 生成变异
-            link_code, task_code, strength = choose_target_reward(current_urdf, mutation_stats)
-            # link_code, task_code, strength = choose_target(current_urdf, variation_probabilities)
-            print("link_code, task_code, strength:",link_code, task_code, strength)
-            # 执行变异
-            success_tag, new_urdf = variation(current_urdf, link_code, task_code, strength,
-                                            standard_variation=0.1, standard_length=0.05)
-            print("success_tag:", success_tag)
+            while True :
+                # 生成变异
+                link_code, task_code, strength = choose_target_reward(current_urdf, mutation_stats)
+                # link_code, task_code, strength = choose_target(current_urdf, variation_probabilities)
+                print("link_code, task_code, strength:",link_code, task_code, strength)
+                # 执行变异
+                success_tag, new_urdf = variation(current_urdf, link_code, task_code, strength,
+                                                standard_variation=0.1, standard_length=0.05)
+                print("success_tag:", success_tag)
+                if success_tag:
+                    break
+            # print("link_code, task_code, strength:",link_code, task_code, strength)
+            # print("success_tag:", success_tag)
+            
             # 如果变异符合物理约束
             if success_tag:
+                # success_num+=1
                 # 进行仿真评分
                 print(current_task)
                 current_score = evaluation(new_urdf, {current_task},
@@ -135,6 +142,13 @@ for current_generation in range(0, max_generation+1): #max_generation+1
                 if current_score > original_score:
                     mutation_stats[key]["improvements"] += 1
                     mutation_stats[key]["score_delta"] += (current_score - original_score)
+                # 保存 mutation_stats 到 JSON 文件
+                with open(experiment_save_path + '_mutation_stats.txt', 'w') as f:
+                    pprint(mutation_stats, stream=f)
+
+                print(f"mutation_stats has been update to {experiment_save_path + '_mutation_stats.txt'}")
+            # if trail==max_variation-1 and success_num==0: #没有成功的 变异
+            #     trail -=1
     # 每个个体都发生完变异后评价整个种群的状态，进行淘汰
     hand_lineage.evaluate_and_eliminate_individuals_in_generation(current_generation+1, max_population)
     # 储存当前谱系

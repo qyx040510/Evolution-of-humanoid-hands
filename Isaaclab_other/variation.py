@@ -220,14 +220,14 @@ def check_joint_displacements(robot_data, max_distance=1.0):
     return True
 
 
-def choose_target_reward(robot_data, mutation_stats=None, epsilon=0.1):
+def choose_target_reward(robot_data, mutation_stats=None, epsilon=0.2):
     all_name_codes = extract_name_codes(robot_data, "name_code")
-
+    all_name_codes = [code for code in all_name_codes if code != "link_0_0"]
     task_list = [
         "change_link_length",
         "change_link_radius",
-        "remove_link",
-        "add_link",
+        # "remove_link",
+        # "add_link",
         "change_joint_origin_translation",
         "change_joint_origin_rpy",
     ]
@@ -239,10 +239,18 @@ def choose_target_reward(robot_data, mutation_stats=None, epsilon=0.1):
         weights = []
         for task, link in all_combinations:
             key = (task, link)
-            stat = mutation_stats.get(key, {"trials": 1, "improvements": 0.0, "score_delta": 0.0})
+            stat = mutation_stats.get(key, {"trials": 0, "improvements": 0.0, "score_delta": 0.0})
             # 使用 score_delta 作为权重（较大的正向变化给更高权重）
-            score_weight = stat["score_delta"]  # 更高的 score_delta 表示更有价值
-            weights.append(score_weight)
+            trials=stat["trials"]
+            improvements=stat["improvements"]
+            delta = stat["score_delta"]  # 更高的 score_delta 表示更有价值
+
+            trials += 1       # 平滑，避免除以 0
+            improvements += 1
+
+            avg_delta = delta / trials
+            success_rate = improvements / trials
+            weights.append(avg_delta * success_rate)
 
         # 归一化权重
         total_weight = sum(weights)

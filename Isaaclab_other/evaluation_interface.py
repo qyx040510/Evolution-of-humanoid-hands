@@ -86,7 +86,7 @@ def run_isaaclab_simulation(task_name, isaaclab_test_result_path, num_envs=64):
     conda_activate_cmd = 'conda activate isaaclab_sim45'  # conda环境名称 source
 
     # 要执行的命令
-    # ./isaaclab.sh -p /home/p/IsaacLab/source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/evolution_tasks/train_interface.py --num_envs=64 --task=Isaac-Hand-Cube-Evolution-v0
+    # ./isaaclab.sh -p /home/qyx/IsaacLab/source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/evolution_tasks/train_interface.py --num_envs=64 --task=Isaac-Hand-Cube-Evolution-v0
     command = [
         '/home/qyx/IsaacLab/isaaclab.sh',
         '-p', '/home/qyx/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/evolution_tasks/train_interface.py',
@@ -94,14 +94,28 @@ def run_isaaclab_simulation(task_name, isaaclab_test_result_path, num_envs=64):
         '--task', str(task_name),
         '--headless'
     ]
+    shell_cmd = f"""
+    source ~/miniconda3/etc/profile.d/conda.sh
+    conda activate isaaclab_sim45
+    {' '.join(command)}
+    """
+
     process = subprocess.Popen(
-    ["bash", "-i", "-c", f"{conda_activate_cmd} && {' '.join(command)}"],
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    text=True
+        ["bash", "-c", shell_cmd],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
     )
+    # process = subprocess.Popen(
+    # ["bash","-c", f"{conda_activate_cmd} && {' '.join(command)}"],
+    # stdout=subprocess.PIPE,
+    # stderr=subprocess.PIPE,
+    # text=True
+    # )
 
     stdout, stderr = process.communicate()  # 会等待完成
+    print(f"stdout:{stdout}")
+    print(f"stderr:{stderr}")
     print("Simulation finished.")
 
     # 延迟一下，确保资源释放
@@ -109,7 +123,7 @@ def run_isaaclab_simulation(task_name, isaaclab_test_result_path, num_envs=64):
 
     # 手动清理 CUDA 上下文（如果你用 PyTorch）
     # torch.cuda.empty_cache()
-    gc.collect()
+    # gc.collect()
     # try:
     #     # 激活 Conda 环境并运行命令
     #     result = subprocess.run(f"bash -i -c '{conda_activate_cmd} && {' '.join(command)}'", check=True, stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,stdin=subprocess.DEVNULL, shell=True)
@@ -157,14 +171,14 @@ def run_isaaclab_simulation(task_name, isaaclab_test_result_path, num_envs=64):
     #     print(f"\nSimulation exited with code {process.returncode}")
 
     # 执行循环，读取tag，要降低读取频率到1-5秒
-    while True:
-        tag = check_finished_folder_exists(isaaclab_test_result_path)
-        if tag:
-            score = get_latest_reward(isaaclab_test_result_path)
-            break
-        time.sleep(10)
-        print("simulation running")
-
+    
+    tag = check_finished_folder_exists(isaaclab_test_result_path)
+    if tag:
+        score = get_latest_reward(isaaclab_test_result_path)
+        return score
+    time.sleep(10)
+    print("simulation running")
+    score=float('-inf')
     return score
 
 # 调用函数执行仿真
